@@ -18,9 +18,8 @@ class MovieRepositoryImpl @Inject constructor(
 ) : MovieRepository {
     override suspend fun getMovies(categoryName: String): MovieListResponseDto = api.getMovies(categoryName)
     override suspend fun getMovie(id: String): MovieDetails = api.getMovieDetail(id)
-    override suspend fun getCachedMovies(): List<MovieEntity> = dao.getMovies()
+    override suspend fun getCachedMovies(): List<MovieEntity>? = dao.getMovies()
     override suspend fun getCachedDetailMovie(id: String): MovieDetailsEntity? = dao.getMovieDetail(id)
-    override suspend fun getMoviesFromDatabase(): List<MovieEntity> = dao.getMovies()
     override suspend fun saveListToCache(response: List<MovieDto>) =
         dao.insertMovies(response.map { mapper.fromDtoToEntity(it) })
 

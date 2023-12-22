@@ -8,10 +8,9 @@ import com.yazdanmanesh.movieapp.data.remote.models.response.MovieListResponseDt
 
 interface MovieRepository {
     suspend fun getMovies(categoryName: String): MovieListResponseDto
-    suspend fun getCachedMovies(): List<MovieEntity>
+    suspend fun getCachedMovies(): List<MovieEntity>?
     suspend fun getCachedDetailMovie(id: String): MovieDetailsEntity?
     suspend fun getMovie(id: String): MovieDetails
-    suspend fun getMoviesFromDatabase(): List<MovieEntity>
     suspend fun saveListToCache(response: List<MovieDto>)
     suspend fun saveMovieDetailsToCache(response: MovieDetails)
     suspend fun deleteMoviesFromDatabase()

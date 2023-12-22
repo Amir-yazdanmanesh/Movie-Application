@@ -22,8 +22,8 @@ class GetMoviesUseCaseImpl @Inject constructor(
     override suspend fun getMovies(): Flow<Resource<List<Movie>>> = flow {
         try {
             emit(Resource.Loading())
-            val cachedMovies: List<MovieEntity> = repository.getCachedMovies()
-            if (cachedMovies.isNotEmpty()) {
+            val cachedMovies: List<MovieEntity>? = repository.getCachedMovies()
+            if (cachedMovies?.isNotEmpty() == true) {
                 emit(Resource.Success(data = cachedMovies.map(mapper::fromEntityToDomain)))
                 return@flow
             }
