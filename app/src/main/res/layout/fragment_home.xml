@@ -16,7 +16,7 @@
         android:paddingBottom="5dp"
         android:text="@string/homePage_showingThisMonthText"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_18"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toTopOf="parent" />
