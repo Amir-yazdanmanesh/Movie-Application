@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Movie App</string>
+    <string name="movieDetailPage_emptyError">>Couldn\'t find the movie.</string>
+    <string name="ratingWithParam">%.1f/10</string>
+
 </resources>
